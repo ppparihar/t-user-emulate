@@ -1,0 +1,207 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+
+<dom-module id="t-user-emulate">
+  <template>
+    <style>
+       :host {
+        display: block;
+      }
+    </style>
+    <input type="text" value="{{searchText}}">
+    <button on-click="search">Click Me</button>
+
+    <template is="dom-if" if="{{showLoader}}">
+      <div>Loading...</div>
+    </template>
+    <div>
+      <template is="dom-repeat" items="{{data}}">
+
+        <div>
+          <span>[[item.id]]</span>
+          <span> | </span>
+          <span>[[item.basicInfo.userName]]</span>
+          <span> | </span>
+          <span>[[item.basicInfo.name.firstName]]</span>
+          <span> | </span>
+          <span>[[item.basicInfo.name.lastName]]</span>
+          <span> | </span>
+          <span on-click="_emulateUserHandler" data-id$="[[item.id]]">Select</span>
+          <hr>
+        </div>
+      </template>
+      <template is="dom-if" if="{{data}}">
+        <div>
+          <button on-click="prevPage" disabled="[[!isPrevPageAvailable]]">Prev</button>
+          Page [[currentPage]] | [[totalPage]]
+          <button on-click="nextPage" disabled="[[!isNextPageAvailable]]">Next</button>
+        </div>
+      </template>
+    </div>
+    <iron-ajax id="ajaxUser" url="[[searchUserApiUrl]]" last-response="{{ajaxResponse}}"
+      handle-as="json" method="POST" content-type="application/json" on-response="_onUserListSuccess" on-error="_onUserListError">
+    </iron-ajax>
+
+    <iron-ajax id="ajaxEmulateUser" url="[[emulateUserApiUrl]]/{{selectedUserId}}"
+      handle-as="json" content-type="application/json" on-response="_onUserEmulateSuccess" on-error="_onUserEmulateError">
+    </iron-ajax>
+
+
+  </template>
+
+  <script>
+    /**
+     * `t-user-emulate`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class TUserEmulate extends Polymer.Element {
+      static get is() {
+        return 't-user-emulate';
+      }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 't-user-emulate'
+          },
+          searchUserApiUrl:{
+            type:String,
+            value:''
+          },
+          emulateUserApiUrl:{
+            type:String,
+            value:''
+          },
+          searchText: {
+            type: String,
+            value: ""
+          },
+          data: {
+            type: Object,
+            value: null
+          },
+          selectedUserId: {
+            type: Number
+          },
+          currentPage: {
+            type: Number,
+            value: 1
+          },
+          pageSize: {
+            type: Number,
+            value: 10
+          },
+          totalRecord: {
+            type: Number,
+            value: 0
+          },
+          totalPage: {
+            type: Number,
+            computed: '_computeTotalPage(totalRecord)'
+          },
+          showLoader: {
+            type: Boolean,
+            value: false
+          },
+          isNextPageAvailable: {
+            type: Number,
+            computed: '_computeNextPageAvailabl(currentPage,totalPage)'
+          },
+          isPrevPageAvailable: {
+            type: Number,
+            computed: '_computePrevPageAvailable(currentPage)'
+          }
+
+        };
+      }
+      search() {
+        this.currentPage = 1;
+        this._getUserList();
+      }
+      prevPage() {
+        let page = this.currentPage - 1;
+        this.currentPage = page <= 0 ? 1 : page;
+        this._getUserList();
+      }
+      nextPage() {
+        let page = this.currentPage + 1;
+        this.currentPage = page <= this.totalPage ? page : this.totalPage;
+        this._getUserList();
+      }
+      _showLoader() {
+        this.showLoader = true;
+      }
+      _hideLoader() {
+        this.showLoader = false;
+      }
+      _emulateUserHandler(e) {
+        this._showLoader();
+
+        let userId = +e.target.getAttribute("data-id");
+        this.selectedUserId = userId;
+
+        var ajax = this.$.ajaxEmulateUser;
+        ajax.generateRequest();
+      }
+
+      _getUserList() {
+        this._showLoader();
+
+        let request = this._buildRequest();
+        var ajax = this.$.ajaxUser;
+        ajax.body = request;
+        ajax.generateRequest();
+      }
+      _buildRequest() {
+        return {
+          "PagingInfo": {
+            "PageSize": 10,
+            "PageNumber": this.currentPage
+          },
+          "UserFilter": {
+            "Username": this.searchText
+          }
+        }
+      }
+      _onUserListSuccess(e) {
+        this._hideLoader();
+        let response = e.detail.response;
+        this.data = response.result.users;
+        this.totalRecord = response.result.totalRecords;
+      }
+      _onUserListError(e) {
+        this._hideLoader();
+      }
+      _onUserEmulateSuccess(e) {
+        this._hideLoader();
+
+        console.log(e.detail.response);
+      }
+      _onUserEmulateError(e) {
+        this._hideLoader();
+      }
+      _showErrorMessage(error) {
+
+      }
+      _computeTotalPage(totalRecord) {
+        if (!totalRecord || !this.pageSize) {
+          return 0;
+        }
+        return Math.ceil(totalRecord / this.pageSize);
+      }
+      _computeNextPageAvailabl(currentPage, totalPage) {
+
+        return currentPage < totalPage;
+      }
+      _computePrevPageAvailable(currentPage) {
+        return currentPage > 1;
+      }
+    }
+
+    window.customElements.define(TUserEmulate.is, TUserEmulate);
+  </script>
+</dom-module>

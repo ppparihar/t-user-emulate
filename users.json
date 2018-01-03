@@ -1,0 +1,564 @@
+{
+  "result": {
+    "users": [
+      {
+        "id": 1062214,
+        "basicInfo": {
+          "userName": "prem",
+          "name": {
+            "title": "Mr.",
+            "firstName": "Prem",
+            "middleName": "",
+            "lastName": "Parihar",
+            "suffix": null,
+            "prefix": null
+          },
+          "dateOfBirth": {
+            "date": "Thu, 02 Dec, 1982",
+            "time": "12:00 AM",
+            "systemDateTime": "1982-12-02T00:00:00"
+          },
+          "role": "Traveller",
+          "gender": "Male",
+          "profileImage": null,
+          "redressInfo": null,
+          "origin": "Email",
+          "createdDate": {
+            "date": "Fri, 22 Dec, 2017",
+            "time": "5:18 AM",
+            "systemDateTime": "2017-12-22T05:18:39.663"
+          },
+          "roles": null
+        },
+        "addresses": [],
+        "contacts": {
+          "phones": [],
+          "emails": [
+            { "id": "1", "value": "pparihar@tavisca.com", "isPrimary": true }
+          ]
+        },
+        "fellowTravellers": null,
+        "passports": null,
+        "memberships": null,
+        "userIdentity": { "secretQuestion": null },
+        "referralInfo": null,
+        "wallet": [
+          {
+            "id": "0",
+            "type": "Points",
+            "amount": 0.0,
+            "denomination": "Points"
+          }
+        ],
+        "referralCode": "prem",
+        "additionalData": null
+      },
+      {
+        "id": 1062213,
+        "basicInfo": {
+          "userName": "pparihar",
+          "name": {
+            "title": "Mr.",
+            "firstName": "Prem",
+            "middleName": "",
+            "lastName": "Parihar",
+            "suffix": null,
+            "prefix": null
+          },
+          "dateOfBirth": {
+            "date": "Wed, 02 Dec, 1992",
+            "time": "12:00 AM",
+            "systemDateTime": "1992-12-02T00:00:00"
+          },
+          "role": "Traveller",
+          "gender": "Male",
+          "profileImage": null,
+          "redressInfo": null,
+          "origin": "Email",
+          "createdDate": {
+            "date": "Fri, 22 Dec, 2017",
+            "time": "5:13 AM",
+            "systemDateTime": "2017-12-22T05:13:56.07"
+          },
+          "roles": null
+        },
+        "addresses": [],
+        "contacts": {
+          "phones": [],
+          "emails": [
+            { "id": "1", "value": "pparihar@tavisca.com", "isPrimary": true }
+          ]
+        },
+        "fellowTravellers": null,
+        "passports": null,
+        "memberships": null,
+        "userIdentity": { "secretQuestion": null },
+        "referralInfo": null,
+        "wallet": [
+          {
+            "id": "0",
+            "type": "Points",
+            "amount": 0.0,
+            "denomination": "Points"
+          }
+        ],
+        "referralCode": "pparihar",
+        "additionalData": null
+      },
+      {
+        "id": 1062106,
+        "basicInfo": {
+          "userName": "testvex",
+          "name": {
+            "title": "Mr.",
+            "firstName": "tejas",
+            "middleName": "",
+            "lastName": "katariya",
+            "suffix": null,
+            "prefix": null
+          },
+          "dateOfBirth": {
+            "date": "Thu, 11 Nov, 1999",
+            "time": "12:00 AM",
+            "systemDateTime": "1999-11-11T00:00:00"
+          },
+          "role": "Traveller",
+          "gender": "Male",
+          "profileImage": null,
+          "redressInfo": null,
+          "origin": "Email",
+          "createdDate": {
+            "date": "Fri, 17 Nov, 2017",
+            "time": "9:11 AM",
+            "systemDateTime": "2017-11-17T09:11:39.183"
+          },
+          "roles": null
+        },
+        "addresses": [],
+        "contacts": {
+          "phones": [],
+          "emails": [
+            { "id": "1", "value": "tkatariya@tavisca.com", "isPrimary": true }
+          ]
+        },
+        "fellowTravellers": null,
+        "passports": null,
+        "memberships": null,
+        "userIdentity": { "secretQuestion": null },
+        "referralInfo": null,
+        "wallet": [
+          {
+            "id": "0",
+            "type": "Points",
+            "amount": 0.0,
+            "denomination": "Points"
+          }
+        ],
+        "referralCode": "testvex",
+        "additionalData": null
+      },
+      {
+        "id": 1056471,
+        "basicInfo": {
+          "userName": "rchadha@tavisca.com",
+          "name": {
+            "title": "Mrs",
+            "firstName": "ruhani",
+            "middleName": null,
+            "lastName": "chadha",
+            "suffix": null,
+            "prefix": null
+          },
+          "dateOfBirth": {
+            "date": "Tue, 14 Jun, 1994",
+            "time": "12:00 AM",
+            "systemDateTime": "1994-06-14T00:00:00"
+          },
+          "role": "Traveller",
+          "gender": "NotSpecified",
+          "profileImage": null,
+          "redressInfo": null,
+          "origin": "Email",
+          "createdDate": {
+            "date": "Mon, 04 Jul, 2016",
+            "time": "1:12 PM",
+            "systemDateTime": "2016-07-04T13:12:45.43"
+          },
+          "roles": null
+        },
+        "addresses": [],
+        "contacts": {
+          "phones": [],
+          "emails": [
+            { "id": "1", "value": "rchadha@tavisca.com", "isPrimary": true }
+          ]
+        },
+        "fellowTravellers": null,
+        "passports": null,
+        "memberships": null,
+        "userIdentity": { "secretQuestion": null },
+        "referralInfo": null,
+        "wallet": [
+          {
+            "id": "0",
+            "type": "Points",
+            "amount": 0.0,
+            "denomination": "Points"
+          }
+        ],
+        "referralCode": "rchadha@tavisca$com",
+        "additionalData": null
+      },
+      {
+        "id": 1056423,
+        "basicInfo": {
+          "userName": "pdhokchaule@tavisca.com",
+          "name": {
+            "title": "Mr",
+            "firstName": "Pritesh",
+            "middleName": "B",
+            "lastName": "Dhokchaule",
+            "suffix": "Mr",
+            "prefix": null
+          },
+          "dateOfBirth": {
+            "date": "Thu, 29 Aug, 1991",
+            "time": "12:00 AM",
+            "systemDateTime": "1991-08-29T00:00:00"
+          },
+          "role": "Traveller",
+          "gender": "Male",
+          "profileImage": null,
+          "redressInfo": null,
+          "origin": "Email",
+          "createdDate": {
+            "date": "Mon, 13 Jun, 2016",
+            "time": "7:31 AM",
+            "systemDateTime": "2016-06-13T07:31:45.27"
+          },
+          "roles": null
+        },
+        "addresses": [],
+        "contacts": {
+          "phones": [],
+          "emails": [
+            { "id": "1", "value": "pdhokchaule@tavisca.com", "isPrimary": true }
+          ]
+        },
+        "fellowTravellers": null,
+        "passports": null,
+        "memberships": null,
+        "userIdentity": { "secretQuestion": null },
+        "referralInfo": null,
+        "wallet": [
+          {
+            "id": "0",
+            "type": "Points",
+            "amount": 0.0,
+            "denomination": "Points"
+          }
+        ],
+        "referralCode": "pdhokchaule@tavisca$com",
+        "additionalData": null
+      },
+      {
+        "id": 1056417,
+        "basicInfo": {
+          "userName": "gtmkumar053@gmail.com",
+          "name": {
+            "title": "",
+            "firstName": "Gautam",
+            "middleName": null,
+            "lastName": "kumar",
+            "suffix": null,
+            "prefix": null
+          },
+          "dateOfBirth": {
+            "date": "Sun, 24 Feb, 1991",
+            "time": "12:00 AM",
+            "systemDateTime": "1991-02-24T00:00:00"
+          },
+          "role": "Traveller",
+          "gender": "NotSpecified",
+          "profileImage": null,
+          "redressInfo": null,
+          "origin": "Email",
+          "createdDate": {
+            "date": "Mon, 06 Jun, 2016",
+            "time": "5:04 AM",
+            "systemDateTime": "2016-06-06T05:04:48.583"
+          },
+          "roles": null
+        },
+        "addresses": [],
+        "contacts": {
+          "phones": [],
+          "emails": [
+            { "id": "1", "value": "gtmkumar053@gmail.com", "isPrimary": true }
+          ]
+        },
+        "fellowTravellers": null,
+        "passports": null,
+        "memberships": null,
+        "userIdentity": { "secretQuestion": null },
+        "referralInfo": null,
+        "wallet": [
+          {
+            "id": "0",
+            "type": "Points",
+            "amount": 0.0,
+            "denomination": "Points"
+          }
+        ],
+        "referralCode": "gtmkumar053@gmail$com",
+        "additionalData": null
+      },
+      {
+        "id": 1056413,
+        "basicInfo": {
+          "userName": "mailinato@mailinator.com",
+          "name": {
+            "title": "",
+            "firstName": "Rohan",
+            "middleName": null,
+            "lastName": "Pandit",
+            "suffix": null,
+            "prefix": null
+          },
+          "dateOfBirth": {
+            "date": "Tue, 10 Jul, 1990",
+            "time": "12:00 AM",
+            "systemDateTime": "1990-07-10T00:00:00"
+          },
+          "role": "Traveller",
+          "gender": "NotSpecified",
+          "profileImage": null,
+          "redressInfo": null,
+          "origin": "Email",
+          "createdDate": {
+            "date": "Fri, 03 Jun, 2016",
+            "time": "4:25 AM",
+            "systemDateTime": "2016-06-03T04:25:25.563"
+          },
+          "roles": null
+        },
+        "addresses": [],
+        "contacts": {
+          "phones": [],
+          "emails": [
+            {
+              "id": "1",
+              "value": "mailinato@mailinator.com",
+              "isPrimary": true
+            }
+          ]
+        },
+        "fellowTravellers": null,
+        "passports": null,
+        "memberships": null,
+        "userIdentity": { "secretQuestion": null },
+        "referralInfo": null,
+        "wallet": [
+          {
+            "id": "0",
+            "type": "Points",
+            "amount": 0.0,
+            "denomination": "Points"
+          }
+        ],
+        "referralCode": "mailinato@mailinator$com",
+        "additionalData": null
+      },
+      {
+        "id": 1056387,
+        "basicInfo": {
+          "userName": "pointsman@mailinator.com",
+          "name": {
+            "title": "Mr",
+            "firstName": "John",
+            "middleName": null,
+            "lastName": "Smith",
+            "suffix": "",
+            "prefix": ""
+          },
+          "dateOfBirth": {
+            "date": "Sun, 01 Jan, 1989",
+            "time": "12:00 AM",
+            "systemDateTime": "1989-01-01T00:00:00"
+          },
+          "role": "Traveller",
+          "gender": "Male",
+          "profileImage": null,
+          "redressInfo": null,
+          "origin": "Email",
+          "createdDate": {
+            "date": "Fri, 27 May, 2016",
+            "time": "7:58 AM",
+            "systemDateTime": "2016-05-27T07:58:22.54"
+          },
+          "roles": null
+        },
+        "addresses": [
+          {
+            "id": "1",
+            "locationType": "Home",
+            "addressScheme": null,
+            "addressLine1": "88",
+            "addressLine2": "Suite Northern Ireland MS 100011",
+            "city": "Austin",
+            "state": "TX",
+            "country": "US",
+            "zip": "73301"
+          }
+        ],
+        "contacts": {
+          "phones": [
+            { "id": "2", "value": "987-354-1247", "locationType": "Home" }
+          ],
+          "emails": [
+            {
+              "id": "1",
+              "value": "johnsmith@mailinator.com",
+              "isPrimary": true
+            }
+          ]
+        },
+        "fellowTravellers": null,
+        "passports": null,
+        "memberships": null,
+        "userIdentity": { "secretQuestion": null },
+        "referralInfo": null,
+        "wallet": [
+          {
+            "id": "0",
+            "type": "Points",
+            "amount": 0.0,
+            "denomination": "Points"
+          }
+        ],
+        "referralCode": "pointsman@mailinator$com",
+        "additionalData": null
+      },
+      {
+        "id": 1056386,
+        "basicInfo": {
+          "userName": "newbasesiteuser@mailinator.com",
+          "name": {
+            "title": "",
+            "firstName": "Rohan",
+            "middleName": null,
+            "lastName": "Pandit",
+            "suffix": null,
+            "prefix": null
+          },
+          "dateOfBirth": {
+            "date": "Mon, 12 Feb, 1990",
+            "time": "12:00 AM",
+            "systemDateTime": "1990-02-12T00:00:00"
+          },
+          "role": "Traveller",
+          "gender": "NotSpecified",
+          "profileImage": null,
+          "redressInfo": null,
+          "origin": "Email",
+          "createdDate": {
+            "date": "Fri, 27 May, 2016",
+            "time": "7:54 AM",
+            "systemDateTime": "2016-05-27T07:54:03.12"
+          },
+          "roles": null
+        },
+        "addresses": [],
+        "contacts": {
+          "phones": [],
+          "emails": [
+            {
+              "id": "1",
+              "value": "newbasesiteuser@mailinator.com",
+              "isPrimary": true
+            }
+          ]
+        },
+        "fellowTravellers": null,
+        "passports": null,
+        "memberships": null,
+        "userIdentity": { "secretQuestion": null },
+        "referralInfo": null,
+        "wallet": [
+          {
+            "id": "0",
+            "type": "Points",
+            "amount": 0.0,
+            "denomination": "Points"
+          }
+        ],
+        "referralCode": "newbasesiteuser@mailinator$com",
+        "additionalData": null
+      },
+      {
+        "id": 1056381,
+        "basicInfo": {
+          "userName": "rohan57576@mailinator.com",
+          "name": {
+            "title": "",
+            "firstName": "ROHAN",
+            "middleName": null,
+            "lastName": "PANDIT",
+            "suffix": null,
+            "prefix": null
+          },
+          "dateOfBirth": {
+            "date": "Wed, 25 Apr, 1990",
+            "time": "12:00 AM",
+            "systemDateTime": "1990-04-25T00:00:00"
+          },
+          "role": "Traveller",
+          "gender": "NotSpecified",
+          "profileImage": null,
+          "redressInfo": null,
+          "origin": "Email",
+          "createdDate": {
+            "date": "Wed, 25 May, 2016",
+            "time": "9:53 AM",
+            "systemDateTime": "2016-05-25T09:53:22.743"
+          },
+          "roles": null
+        },
+        "addresses": [],
+        "contacts": {
+          "phones": [],
+          "emails": [
+            {
+              "id": "1",
+              "value": "rohan57576@mailinator.com",
+              "isPrimary": true
+            }
+          ]
+        },
+        "fellowTravellers": null,
+        "passports": null,
+        "memberships": null,
+        "userIdentity": { "secretQuestion": null },
+        "referralInfo": null,
+        "wallet": [
+          {
+            "id": "0",
+            "type": "Points",
+            "amount": 0.0,
+            "denomination": "Points"
+          }
+        ],
+        "referralCode": "rohan57576@mailinator$com",
+        "additionalData": null
+      }
+    ],
+    "totalRecords": 12
+  },
+  "status": {
+    "isSuccessful": true,
+    "code": 200,
+    "message": "Successful",
+    "referenceId": "a187ed4b-a0e4-4683-9670-a1aa69213d69",
+    "additionalMessages": []
+  }
+}

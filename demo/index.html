@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>t-user-emulate demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../t-user-emulate.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic t-user-emulate demo</h3>
+      <demo-snippet>
+        <template>
+           
+          <t-user-emulate 
+          search-user-api-url="https://8bfd888b-a2b3-473c-9a41-2d243a38e154.mock.pstmn.io/api/user/list"
+          emulate-user-api-url=" https://8bfd888b-a2b3-473c-9a41-2d243a38e154.mock.pstmn.io/api/EmulateUser"></t-user-emulate>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>

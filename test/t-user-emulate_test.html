@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>t-user-emulate test</title>
+
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+
+  <link rel="import" href="../t-user-emulate.html">
+</head>
+
+<body>
+
+  <test-fixture id="UserEmulateFixture">
+    <template>
+      <t-user-emulate search-user-api-url="/responds_to_post_with_json"  emulate-user-api-url="/responds_to_emulate_post_with_json"></t-user-emulate>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="ChangedPropertyTestFixture">
+    <template>
+      <t-user-emulate prop1="new-prop1"></t-user-emulate>
+    </template>
+  </test-fixture>
+
+  <script>
+    suite('t-user-emulate', function () {
+      let server = null;
+      let UserEmulateComp = null;
+      let responseHeaders = {
+        json: {
+          'Content-Type': 'application/json'
+        }
+      };
+      let responseData = {
+        success: '{"result":{"id":1062106,"basicInfo":{"userName":"ppariahr","name":{"title":"Mr.","firstName":"Prem","middleName":"","lastName":"Parihar","suffix":null,"prefix":null},"dateOfBirth":{"date":"Thu, 11 Nov, 1999","time":"12:00 AM","systemDateTime":"1999-11-11T00:00:00"},"role":"Admin","gender":"Male","profileImage":null,"redressInfo":null,"origin":"Email","createdDate":{"date":"Fri, 17 Nov, 2017","time":"9:11 AM","systemDateTime":"2017-11-17T09:11:39.183"},"roles":["Admin"]}},"status":{"isSuccessful":true,"code":200,"message":"Successful","referenceId":"0fcbd826-d03d-4d64-80b7-931b615a161b","additionalMessages":[]}}',
+        error: '{"status":{"isSuccessful":false,"message":"error message"}}',
+        error504: '{"message": "Endpoint request timed out"}'
+      }
+      let requestData = {}
+
+      setup(() => {
+        server = sinon.fakeServer.create();
+        server.respondWith(
+          'POST',
+          '/responds_to_post_with_json', [
+            200,
+            responseHeaders.json,
+            responseData.success
+          ]
+        );
+
+        UserEmulateComp = fixture('UserEmulateFixture');
+        requestData = {
+          "PagingInfo": {
+            "PageSize": 10,
+            "PageNumber": 1
+          },
+          "UserFilter": {
+            "Username": ""
+          }
+        };
+      });
+      teardown(() => {
+        server.restore();
+      });
+
+      test('instantiating the element with default properties works', function () {
+        expect(UserEmulateComp).to.be.ok;
+      });
+
+      test('default search user works', function (done) {
+
+        let successHandler = sinon.spy(function (e) {
+          expect(JSON.stringify(e.detail.response)).to.equal(responseData.success);
+          done();
+        });
+
+        UserEmulateComp._onUserListSuccess = successHandler;
+        UserEmulateComp.search();
+
+        server.respond();
+
+        expect(server.requests[0]).to.be.ok;
+        expect(server.requests[0].requestBody).to.equal(JSON.stringify(requestData));
+
+      });
+      test('search user by user name works', function (done) {
+
+        let successHandler = sinon.spy(function (e) {
+          expect(JSON.stringify(e.detail.response)).to.equal(responseData.success);
+          done();
+        });
+
+        UserEmulateComp._onUserListSuccess = successHandler;
+        UserEmulateComp.searchText = "pparihar";
+        UserEmulateComp.search();
+
+        server.respond();
+
+        requestData.UserFilter.Username = "pparihar";
+        expect(server.requests[0]).to.be.ok;
+        expect(server.requests[0].requestBody).to.equal(JSON.stringify(requestData));
+
+      });
+
+      suite('pagination', function () {
+        setup(() => {
+
+          UserEmulateComp.totalRecord = 100;
+          UserEmulateComp.pageSize = 10;
+
+        })
+        test('next page from pagination works', function () {
+
+          UserEmulateComp.nextPage();
+          UserEmulateComp.search();
+
+          server.respond();
+
+          requestData.PagingInfo.PageNumber = 2;
+          expect(server.requests[0]).to.be.ok;
+          expect(server.requests[0].requestBody).to.equal(JSON.stringify(requestData));
+
+        });
+
+        test("next page don't go more than total page", function () {
+
+          UserEmulateComp.currentPage = 10
+          UserEmulateComp.nextPage();
+          UserEmulateComp.search();
+
+          server.respond();
+
+          requestData.PagingInfo.PageNumber = 10;
+          expect(server.requests[0]).to.be.ok;
+          expect(server.requests[0].requestBody).to.equal(JSON.stringify(requestData));
+
+        });
+        test('Prev page from pagination works', function () {
+
+          UserEmulateComp.currentPage = 2
+          UserEmulateComp.prevPage();
+          UserEmulateComp.search();
+
+          server.respond();
+         
+          expect(server.requests[0]).to.be.ok;
+          expect(server.requests[0].requestBody).to.equal(JSON.stringify(requestData));
+
+        });
+
+        test("Prev page don't go less than 0", function () {
+
+          UserEmulateComp.currentPage = 1
+          UserEmulateComp.prevPage();
+          UserEmulateComp.search();
+
+          server.respond();
+         
+          expect(server.requests[0]).to.be.ok;
+          expect(server.requests[0].requestBody).to.equal(JSON.stringify(requestData));
+
+        });
+      })
+
+
+    });
+  </script>
+
+</body>
+
+</html>

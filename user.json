@@ -1,0 +1,51 @@
+{
+  "result": {
+    "id": 1062106,
+    "basicInfo": {
+      "userName": "testvex",
+      "name": {
+        "title": "Mr.",
+        "firstName": "tejas",
+        "middleName": "",
+        "lastName": "katariya",
+        "suffix": null,
+        "prefix": null
+      },
+      "dateOfBirth": {
+        "date": "Thu, 11 Nov, 1999",
+        "time": "12:00 AM",
+        "systemDateTime": "1999-11-11T00:00:00"
+      },
+      "role": "Admin",
+      "gender": "Male",
+      "profileImage": null,
+      "redressInfo": null,
+      "origin": "Email",
+      "createdDate": {
+        "date": "Fri, 17 Nov, 2017",
+        "time": "9:11 AM",
+        "systemDateTime": "2017-11-17T09:11:39.183"
+      },
+      "roles": ["Admin"]
+    },
+    "addresses": [],
+    "contacts": { "phones": [], "emails": [] },
+    "fellowTravellers": null,
+    "passports": null,
+    "memberships": null,
+    "userIdentity": { "secretQuestion": null },
+    "referralInfo": null,
+    "wallet": [
+      { "id": "0", "type": "Points", "amount": 0.0, "denomination": "Points" }
+    ],
+    "referralCode": "testvex",
+    "additionalData": null
+  },
+  "status": {
+    "isSuccessful": true,
+    "code": 200,
+    "message": "Successful",
+    "referenceId": "0fcbd826-d03d-4d64-80b7-931b615a161b",
+    "additionalMessages": []
+  }
+}
